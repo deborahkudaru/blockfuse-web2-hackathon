@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style-type: none;
+}
+
+body{
+  background-image: url("./assets/anupam-mahapatra-Vz0RbclzG_w-unsplash.jpg");
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* navbar */
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.nav-items, .log-sign-con{
+  display: flex;
+  gap: 30px;
+  align-self: center;
+  font-weight: 600;
+}
+
+.log-sign a{
+  background-color:  rgb(129, 4, 179);
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* body */
+#body {
+  text-align: center;
+  padding-top: 120px;
+  height: 80vh;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.subtext {
+  font-style: italic;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 50px;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+.body-btn {
+  background-color: rgb(129, 4, 179);
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+/* footer */
+footer {
+  background-color: black;
+  padding: 20px 50px;
+}
+
+footer p {
+  font-size: 12px;
+}
