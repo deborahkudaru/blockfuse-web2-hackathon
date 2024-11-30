@@ -40,6 +40,11 @@ nav{
   font-size: 16px;
 }
 
+.ham-btn{
+  display: none;
+}
+
+
 /* body */
 #body {
   text-align: center;
@@ -75,4 +80,69 @@ footer {
 
 footer p {
   font-size: 12px;
+}
+/* responsive on tablet screen */
+
+@media (max-width: 900px){
+  .nav-items, .log-sign-con{
+    gap: 10px;
+  }
+}
+
+/* responsive on mobile screen */
+@media (max-width: 600px) {
+  /* navbar */
+  nav{
+    padding: 20px 20px;
+  }
+  .nav-items{
+    display: none;
+  }
+  .log-sign-con{
+    gap: 10px;
+  }
+  .log-sign a{
+    padding: 4px 7px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .ham-btn{
+    display: block;
+    font-size: 25px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+  }
+
+  .logo-btn{
+    display: flex;
+    gap: 5px;
+  }
+
+  /* body */
+
+  #body {
+    padding-top: 100px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtext {
+    font-style: italic;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+    line-height: 1.5rem;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .body-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
 }
