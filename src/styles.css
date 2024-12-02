@@ -33,6 +33,10 @@ nav{
   font-weight: 600;
 }
 
+.nav-items a:hover{
+  color: rgb(129, 4, 179);
+}
+
 .log-sign a{
   background-color:  rgb(129, 4, 179);
   padding: 6px 10px;
