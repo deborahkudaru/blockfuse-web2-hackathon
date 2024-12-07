@@ -4,14 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebas
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyCpRPaP1wVEaG4ewVPSLzpP26i9luJjMRQ",
-    authDomain: "blockfuse-fitness-app.firebaseapp.com",
-    projectId: "blockfuse-fitness-app",
-    storageBucket: "blockfuse-fitness-app.firebasestorage.app",
-    messagingSenderId: "156943944482",
-    appId: "1:156943944482:web:d9fe2c9c7eb742ddff337b"
-};
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
