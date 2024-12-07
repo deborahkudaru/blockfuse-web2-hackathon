@@ -159,6 +159,13 @@ body {
   margin-top: 2rem;
 }
 
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #888;
+}
+
+
 @media (max-width: 480px) {
   .container {
     padding: 1rem;

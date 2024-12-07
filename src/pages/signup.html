@@ -6,7 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles/signup.css" />
     <!-- <link rel="stylesheet" href="../styles.css"> -->
-    <script type="module" src="../scripts/signup.js" defer></script>
+    <!-- <script type="module" src="../scripts/signup.js" defer></script> -->
+     <script type="module" src="../firebase.js"></script>
   </head>
   <body>
     <div class="container">
@@ -64,13 +65,13 @@
 
       <form class="signup-form">
         <div class="input-group">
-          <label for="name">Full Name</label>
-          <input id="full-name" type="text" required />
+          <label for="full-name">Full Name</label>
+          <input id="full-name" type="text" required autocomplete="additional-name" />
         </div>
 
         <div class="input-group">
           <label for="email">Email</label>
-          <input id="email" type="email" required />
+          <input id="email" type="email" required autocomplete="email"/>
         </div>
 
         <div class="input-group">

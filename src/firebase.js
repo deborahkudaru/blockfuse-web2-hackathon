@@ -5,15 +5,71 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebas
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAznoagYilJqs8B2CHZhPNA9yjpQAmT548",
-    authDomain: "blockfuse-hackathon-239f1.firebaseapp.com",
-    projectId: "blockfuse-hackathon-239f1",
-    storageBucket: "blockfuse-hackathon-239f1.firebasestorage.app",
-    messagingSenderId: "471436298635",
-    appId: "1:471436298635:web:590f302d81ae16b8bb078e"
+    apiKey: "AIzaSyCpRPaP1wVEaG4ewVPSLzpP26i9luJjMRQ",
+    authDomain: "blockfuse-fitness-app.firebaseapp.com",
+    projectId: "blockfuse-fitness-app",
+    storageBucket: "blockfuse-fitness-app.firebasestorage.app",
+    messagingSenderId: "156943944482",
+    appId: "1:156943944482:web:d9fe2c9c7eb742ddff337b"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export default app;
+
+import {
+    getAuth,
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import {
+    getFirestore,
+    setDoc,
+    doc,
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+let submitBtn = document.querySelector("#submit-btn");
+
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    submitBtn.textContent = "Signing up...";
+    submitBtn.disabled = true;
+
+    let fullName = document.querySelector("#full-name").value;
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+
+    const auth = getAuth(app);
+    const db = getFirestore();
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            const userData = {
+                email: email,
+                fullName: fullName,
+            };
+            console.log("User has been created");
+
+            const docRef = doc(db, "users", user.uid);
+            setDoc(docRef, userData)
+                .then(() => {
+
+                    window.location.href = "./welcome.html";
+                })
+                .catch((err) => {
+                    console.error("Error writing document", err);
+
+                    // Revert button text and re-enable the button
+                    submitBtn.textContent = "Sign Up";
+                    submitBtn.disabled = false;
+                });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage, errorCode);
+
+            submitBtn.textContent = "Sign Up";
+            submitBtn.disabled = false;
+        });
+});
+
