@@ -1,68 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <!-- <link rel="stylesheet" href="../styles.css"> -->
     <title>ducument</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-     <div class="login-content">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <div class="back-button">
+      <div class="login-content">
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <!-- <div class="back-button">
             <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" class="back-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-        </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="back-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                width="16"
+                height="16"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </a>
 
-          <span>Back</span>
-        </div>
-        <div class="login-title">
-          <h1>Login</h1> 
+            <span>Back</span>
+          </div> -->
+          <div class="login-title">
+            <h3>Login</h3>
+          </div>
         </div>
       </div>
-     </div>
-  
-      <div class="login-info">
-       Login with the following option
-      </div>
-  
+
       <div class="login-options">
-       <button class="social-btn">
-        <img alt="Google logo" src="../assets/download.jpeg"  height="50px" width="50px"/>
-        <span>Google</span>
-       </button>
-       <button class="social-btn">
-        <img alt="Apple logo" src="../assets/apple.png" height="50px" width="50px"/>
-        <span>Apple</span>
-       </button>
+        <button class="social-btn">
+          <img
+            alt="Google logo"
+            src="../assets/download.jpeg"
+            height="50px"
+            width="50px"
+          />
+          <span>Google</span>
+        </button>
+        <button class="social-btn">
+          <img
+            alt="Apple logo"
+            src="../assets/apple.png"
+            height="50px"
+            width="50px"
+          />
+          <span>Apple</span>
+        </button>
       </div>
-  
+
       <form class="login-form">
-       <div class="input-group">
-        <label for="email">Email</label>
-        <input id="email" type="email"/>
-       </div>
-  
-       <div class="input-group">
-        <label for="password">Password</label>
-        <input id="password" type="password"/>
-       </div>
-  
-       <button type="submit" class="login-button">
-        Login
-       </button>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" required />
+        </div>
+
+        <button type="submit" class="login-button">Login</button>
       </form>
-  
+
       <div class="signup-link">
-       <span>
-        Don't have an account?
-        <a href="signup.html">Sign up</a>
-       </span>
+        <span>
+          Don't have an account?
+          <a href="signup.html">Sign up</a>
+        </span>
       </div>
-     </div>
     </div>
-</body>
+  </body>
 </html>

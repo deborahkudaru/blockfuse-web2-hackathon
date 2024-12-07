@@ -1,78 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="signup.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/signup.css" />
+    <!-- <link rel="stylesheet" href="../styles.css"> -->
+    <script type="module" src="../scripts/signup.js" defer></script>
+  </head>
+  <body>
     <div class="container">
-     <div class="signup-content">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-
-        <div class="back-button">
+      <div class="signup-content">
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <!-- <div class="back-button">
             <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" class="back-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg></a>
-          <span>Back</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="back-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                width="20"
+                height="20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                /></svg
+            ></a>
+            <span>Back</span>
+          </div> -->
+          <div class="signup-title">
+            <h1>Sign Up</h1>
+          </div>
+        </div>
+      </div>
+<!-- 
+      <div class="signup-info">Sign Up with the following option</div> -->
 
-        </div>
-        <div class="signup-title">
-          <h1>Sign Up</h1>
-        </div>
-      </div>
-     </div>
-  
-      <div class="signup-info">
-       Sign Up with the following option
-      </div>
-  
       <div class="signup-options">
-       <button class="social-btn">
-        <img alt="Google logo" src="../assets/download.jpeg" height="50px" width="50px"/>
-        <span>Google</span>
-       </button>
+        <button class="social-btn">
+          <img
+            alt="Google logo"
+            src="../assets/download.jpeg"
+            height="50px"
+            width="50px"
+          />
+          <span>Google</span>
+        </button>
 
-       <button class="social-btn">
-        <img alt="Apple logo" src="../assets/apple.png" height="50px" width="50px"/>
-        <span>IOS</span>
-       </button>
+        <button class="social-btn">
+          <img
+            alt="Apple logo"
+            src="../assets/apple.png"
+            height="50px"
+            width="50px"
+          />
+          <span>Apple</span>
+        </button>
       </div>
-  
+
       <form class="signup-form">
-       <div class="input-group">
-        <label for="name">Full Name</label>
-        <input id="name"  type="text"/>
-       </div>
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input id="full-name" type="text" required />
+        </div>
 
-       <div class="input-group">
-        <label for="email">Email</label>
-        <input id="email"  type="email"/>
-       </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" required />
+        </div>
 
-       
-  
-       <div class="input-group">
-        <label for="password">Password</label>
-        <input id="password"  type="password"/>
-       </div>
-  
-       <button type="submit" class="signup-button">
-        Login
-       </button>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" required/>
+        </div>
+
+        <button type="submit" class="signup-btn" id="submit-btn">Sign Up</button>
       </form>
-  
-      <div class="login-link">
-       <span>
-        Don't have an account?
-        <a href="login.html">Login</a>
-       </span>
-      </div>
 
-     </div>
+      <div class="login-link">
+        <span>
+          Don't have an account?
+          <a href="login.html">Login</a>
+        </span>
+      </div>
     </div>
-      <script src="./index.js"></script>
-    </body>
-    </html>
+
+    <!-- <script src="../scripts/signup.js"></script> -->
+  </body>
+</html>
