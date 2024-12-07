@@ -65,7 +65,8 @@ h1 {
   padding: 12px 25px;
   border-radius: 10px;
   font-size: 18px;
-  background: linear-gradient(to right, #810941, #ca0298);
+  /* background: linear-gradient(to right, #810941, #ca0298); */
+  background-color:  rgb(129, 4, 179);
 }
 
 /* footer */

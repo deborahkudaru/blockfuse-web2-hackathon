@@ -51,7 +51,7 @@ submitBtn.addEventListener("click", (e) => {
                 .catch((err) => {
                     console.error("Error writing document", err);
 
-                    // Revert button text and re-enable the button
+        
                     submitBtn.textContent = "Sign Up";
                     submitBtn.disabled = false;
                 });
