@@ -1,74 +1,3 @@
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-// import {
-//     getAuth,
-//     onAuthStateChanged,
-//     signOut
-// } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-// import {
-//     getFirestore,
-//     getDoc,
-//     doc,
-// } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
-// // Firebase configuration
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCpRPaP1wVEaG4ewVPSLzpP26i9luJjMRQ",
-//     authDomain: "blockfuse-fitness-app.firebaseapp.com",
-//     projectId: "blockfuse-fitness-app",
-//     storageBucket: "blockfuse-fitness-app.firebasestorage.app",
-//     messagingSenderId: "156943944482",
-//     appId: "1:156943944482:web:d9fe2c9c7eb742ddff337b"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-// const db = getFirestore(app);
-
-
-// function capitalizeName(name) {
-//     return name
-//         .split(" ")
-//         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize each word
-//         .join(" "); 
-// }
-
-// // Handle user session and fetch user data
-// onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//         const docRef = doc(db, "users", user.uid);
-//         getDoc(docRef).then((docSnap) => {
-//             if (docSnap.exists()) {
-//                 const userData = docSnap.data();
-//                 document.querySelector("#full-name").innerText =capitalizeName(userData.fullName);
-//                 document.querySelector("#bmi").innerText = userData.weight/userData.height**2
-//             } else {
-//                 console.error("No document found matching the user's ID");
-//             }
-//         }).catch((error) => {
-//             console.error("Error fetching user data:", error);
-//         });
-//     } else {
-//         console.log("No user is logged in, redirecting to login...");
-//         window.location.href = "../index.html";
-//     }
-// });
-
-// // Logout functionality
-// const logoutBtn = document.querySelector("#log-out");
-
-// logoutBtn.addEventListener("click", () => {
-//     signOut(auth).then(() => {
-//         console.log("User successfully signed out");
-//         window.location.href = "../index.html";
-//     }).catch((error) => {
-//         console.error("Error signing out:", error);
-//     });
-// });
-
-
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import {
     getAuth,
@@ -79,6 +8,9 @@ import {
     getFirestore,
     getDoc,
     doc,
+    updateDoc,
+    increment,
+    arrayUnion
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 // Firebase configuration
@@ -100,8 +32,8 @@ const db = getFirestore(app);
 function capitalizeName(name) {
     return name
         .split(" ")
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize each word
-        .join(" "); 
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(" ");
 }
 
 // Function to fetch and render the calendar
@@ -120,7 +52,6 @@ function fetchAndRenderCalendar(loginDates) {
         dayElement.classList.add("calendar-day");
         dayElement.innerText = day;
 
-       
         if (loginDates.includes(date)) {
             dayElement.classList.add("logged-in");
         }
@@ -129,7 +60,19 @@ function fetchAndRenderCalendar(loginDates) {
     }
 }
 
-// fetch user data from databse
+// Function to render logged times
+function renderLoggedTimes(loggedTimes) {
+    const logContainer = document.querySelector("#log-container");
+    logContainer.innerHTML = "<p class='log-heading'>Logged Times. Target: 9000 seconds</p>"; 
+
+    loggedTimes.forEach(log => {
+        const logElement = document.createElement("p");
+        logElement.textContent = `${log.time} seconds on ${log.date}`;
+        logContainer.appendChild(logElement);
+    });
+}
+
+// Fetch user data from database
 onAuthStateChanged(auth, (user) => {
     if (user) {
         const docRef = doc(db, "users", user.uid);
@@ -137,11 +80,14 @@ onAuthStateChanged(auth, (user) => {
             if (docSnap.exists()) {
                 const userData = docSnap.data();
                 document.querySelector("#full-name").innerText = capitalizeName(userData.fullName);
-                document.querySelector("#bmi").innerText = userData.weight / userData.height ** 2;
+                document.querySelector("#bmi").innerText = (userData.weight / userData.height ** 2).toFixed(2);
 
-             
                 if (userData.loginDates) {
                     fetchAndRenderCalendar(userData.loginDates);
+                }
+
+                if (userData.loggedTimes) {
+                    renderLoggedTimes(userData.loggedTimes);
                 }
             } else {
                 console.error("No document found matching the user's ID");
@@ -167,56 +113,107 @@ logoutBtn.addEventListener("click", () => {
     });
 });
 
-
-
-// to get current date
+// To display current date with day
 const today = new Date();
-
-
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
 const currentDay = days[today.getDay()];
-
 const options = { year: 'numeric', month: 'long', day: 'numeric' };
 const formattedDate = today.toLocaleDateString('en-US', options);
 
-let todaysDate = document.querySelector("#todays-date")
+let todaysDate = document.querySelector("#todays-date");
+todaysDate.innerText = `${formattedDate}, ${currentDay}`;
 
-todaysDate.innerText = `${formattedDate}, ${currentDay}`
-
-
-
-
-// for timer
+// Timer functionality
 let secondsElapsed = 0;
 let timerInterval;
 
 const timerElement = document.getElementById("timer");
 const startButton = document.getElementById("start-btn");
 const stopButton = document.getElementById("stop-btn");
+const resetButton = document.getElementById("reset-btn");
+const logTimeButton = document.getElementById("log-time-btn");
 
 function updateTimerDisplay() {
-  const hours = Math.floor(secondsElapsed / 3600);
-  const minutes = Math.floor((secondsElapsed % 3600) / 60);
-  const seconds = secondsElapsed % 60;
+    const hours = Math.floor(secondsElapsed / 3600);
+    const minutes = Math.floor((secondsElapsed % 3600) / 60);
+    const seconds = secondsElapsed % 60;
 
-  timerElement.textContent = 
-    `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    timerElement.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
 function startCountUp() {
-  if (!timerInterval) {
-    timerInterval = setInterval(() => {
-      secondsElapsed++;
-      updateTimerDisplay();
-    }, 1000);
-  }
+    if (!timerInterval) {
+        timerInterval = setInterval(() => {
+            secondsElapsed++;
+            updateTimerDisplay();
+        }, 1000);
+    }
 }
 
 function stopCountUp() {
-  clearInterval(timerInterval);
-  timerInterval = null;
+    clearInterval(timerInterval);
+    timerInterval = null;
 }
 
+function resetTimer() {
+    stopCountUp();
+    secondsElapsed = 0;
+    updateTimerDisplay();
+}
+
+function logTime() {
+    const user = auth.currentUser;
+    if (user) {
+        const currentDate = today.toISOString().split("T")[0];
+        const userDocRef = doc(db, "users", user.uid);
+        const logEntry = { time: secondsElapsed, date: currentDate };
+
+        updateDoc(userDocRef, {
+            loggedTimes: arrayUnion(logEntry),
+            timeLogged: increment(secondsElapsed)
+        })
+            .then(() => {
+                console.log("Time logged successfully:", logEntry);
+                secondsElapsed = 0;
+                updateTimerDisplay();
+
+                // Fetch and render the updated log
+                getDoc(userDocRef).then((docSnap) => {
+                    if (docSnap.exists()) {
+                        const userData = docSnap.data();
+                        renderLoggedTimes(userData.loggedTimes || []);
+                    }
+                });
+            })
+            .catch((error) => {
+                console.error("Error logging time to Firebase:", error);
+            });
+    }
+}
+
+// Event Listeners for Timer Buttons
 startButton.addEventListener("click", startCountUp);
 stopButton.addEventListener("click", stopCountUp);
+resetButton.addEventListener("click", resetTimer);
+logTimeButton.addEventListener("click", logTime);
+
+
+// toggle menue
+let menuBtn = document.getElementById("menu-btn")
+let closeBtn = document.getElementById("close-btn")
+
+
+menuBtn.addEventListener("click", () => {
+    document.getElementById("phone").style.display = "flex"
+    menuBtn.style.display = "none";
+    closeBtn.style.display = "block"
+    
+})
+
+
+
+closeBtn.addEventListener("click", () => {
+    document.getElementById("phone").style.display = "none"
+    closeBtn.style.display = "none";
+    menuBtn.style.display = "block"
+})

@@ -1,108 +1,352 @@
 * {
-    padding: 0;
-    margin: 0;
-  }
+  padding: 0;
+  margin: 0;
+}
 
 body {
-    /* background-color: #000; */
-    background: linear-gradient(rgb(35, 1, 39), rgb(3, 0, 2));
-    color: #fff;
-    font-family: Arial, sans-serif;
-    /* display: flex; */
-    /* justify-content: center;
+  /* background-color: #000; */
+  background: linear-gradient(rgb(35, 1, 39), rgb(3, 0, 2));
+  color: #fff;
+  font-family: Arial, sans-serif;
+  /* display: flex; */
+  /* justify-content: center;
     align-items: center; */
-    height: 100vh;
-    /* margin: 0; */
+  height: 100vh;
+  /* margin: 0; */
 }
 
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-   
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
 }
 
-ul{
-    display: flex;
-    gap: 30px;
-    font-size: 16px;
-    font-weight: 600;
+ul {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+  font-weight: 600;
 }
-li{
-    list-style-type: none;
+li {
+  list-style-type: none;
 }
-.nav-items a{
-
-    color: white;
-}
-
-a{
-    text-decoration: none;
-}
-.nav-items{
-    display: flex;
-    gap: 10px;
+.nav-items a {
+  color: white;
 }
 
-
-#body{
-    padding: 20px 50px;
-    display: flex;
+a {
+  text-decoration: none;
+}
+.nav-items {
+  display: flex;
+  gap: 10px;
 }
 
-h2{
-    font-size: 2.5rem;
+#body {
+  padding: 10px 50px;
+  display: flex;
+}
+
+h2 {
+  font-size: 2.5rem;
 }
 
 .calendar-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .calendar-day {
-    text-align: center;
-    padding: 5px;
-    border: 1px solid gray;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid gray;
 }
 .calendar-day.logged-in {
-    background-color: rgb(129, 4, 179);
-    color: white;
-    font-weight: 600;
+  background-color: rgb(129, 4, 179);
+  color: white;
+  font-weight: 600;
 }
 
-
-.bmi-intro{
-    font-size: 18px;
-    width: 50%;
-    line-height: 30px;
-    margin-top: 20px;
-    margin-left: 5px;
+.bmi-intro {
+  font-size: 18px;
+  width: 50%;
+  line-height: 30px;
+  margin-top: 20px;
+  margin-left: 5px;
 }
 
-#log-out{
-    border: 0;
-    outline: 0;
-    background-color: transparent;
-    color: white;
-    font-weight: 200;
-    font-size: 20px;
-    margin-left: 30px;
+#log-out {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: white;
+  font-weight: 200;
+  font-size: 20px;
+  margin-left: 30px;
 }
 
+#todays-date {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
 
-#todays-date{
+.workouts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.workouts div {
+  /* width: 80%; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#workout-section {
+  border-right: 1px solid gray;
+}
+
+#date-sec {
+  padding-left: 10px;
+}
+
+#timer {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+#timer-controls button {
+  background-color: rgb(129, 4, 179);
+  padding: 5px 7px;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: 0;
+  border: 0;
+  color: white;
+  margin: 3px;
+}
+
+#log-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.log-heading {
+  border-bottom: 1px solid gray;
+}
+
+.workouts img {
+  max-width: 60%;
+}
+
+.intro {
+  margin-bottom: 30px;
+}
+
+h3,
+.people {
+  margin-bottom: 10px;
+}
+
+.people {
+  font-size: 14px;
+}
+
+.menu {
+  display: none;
+}
+
+.x-btn {
+  display: none;
+}
+
+#phone {
+  display: none;
+}
+
+@media (max-width: 900px) {
+    #body {
+        flex-direction: column;
+      }
+    
+      #workout-section {
+        border-right: 0;
+      }
+    
+      h2 {
+        font-size: 1.7rem;
+      }
+    
+      .bmi-intro {
+        width: 100%;
+        font-size: 16px;
+      }
+    
+      .workouts img {
+        max-width: 70%;
+      }
+    
+      h4 {
+        font-size: 14px;
+      }
+    
+      .workouts {
+        /* display: grid; */
+        grid-template-columns: repeat(3, 1fr);
+      }
+    
+      .people {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    
+      #date-sec {
+        padding: 0;
+      }
+    
+      .menu,
+      .x-btn {
+        z-index: 1;
+        font-size: 25px;
+        align-self: center;
+        outline: 0;
+        border: 0;
+        background-color: transparent;
+      }
+    
+      .menu, .x-btn {
+        display: block;
+        color: white;
+      }
+    
+      .nav-items {
+        display: none;
+      }
+    
+      #phone{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        top: 20px;
+        color: black;
+        background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+        backdrop-filter: blur(10px); /* Blur effect */
+        width: 85%;
+        height: 100%;
+        padding: 20px;
+      }
+    
+      .nav-items-phone{
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .nav-items-phone a{
+        color: #fff;
+      }
+    
+      #log-out{
+        margin: 0;
+      }
+    
+      nav, #body{
+        padding: 10px 20px;
+      } 
+}
+
+@media (max-width: 600px) {
+  #body {
+    flex-direction: column;
+  }
+
+  #workout-section {
+    border-right: 0;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .bmi-intro {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .workouts img {
+    max-width: 70%;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .workouts {
+    /* display: grid; */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .people {
+    margin-top: 10px;
     margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 500;
+  }
+
+  #date-sec {
+    padding: 0;
+  }
+
+  .menu,
+  .x-btn {
+    z-index: 1;
+    font-size: 25px;
+    align-self: center;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .menu, .x-btn {
+    display: block;
+    color: white;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  #phone{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 20px;
+    color: black;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    width: 85%;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .nav-items-phone{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-items-phone a{
+    color: #fff;
+  }
+
+  #log-out{
+    margin: 0;
+  }
+
+  nav, #body{
+    padding: 10px 20px;
+  }
 }
-
-.workouts{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .workouts div{
-    width: 80%;
-  }
