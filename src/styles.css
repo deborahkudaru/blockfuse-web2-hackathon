@@ -4,15 +4,15 @@
   font-family: "Roboto", sans-serif;
   color: white;
 }
-a{
+a {
   text-decoration: none;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-body{
+body {
   background-image: url("./assets/anupam-mahapatra-Vz0RbclzG_w-unsplash.jpg");
   background-color: rgba(0, 0, 0, 0.8);
   background-blend-mode: overlay;
@@ -20,21 +20,22 @@ body{
   background-size: cover;
 }
 /* navbar */
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 50px;
 }
 
-.nav-items, .log-sign-con{
+.nav-items,
+.log-sign-con {
   display: flex;
   gap: 30px;
   align-self: center;
   font-weight: 600;
 }
 
-.log-sign a{
-  background-color:  rgb(129, 4, 179);
+.log-sign a {
+  background-color: rgb(129, 4, 179);
   padding: 6px 10px;
   border-radius: 5px;
   font-size: 16px;
@@ -66,7 +67,7 @@ h1 {
   border-radius: 10px;
   font-size: 18px;
   /* background: linear-gradient(to right, #810941, #ca0298); */
-  background-color:  rgb(129, 4, 179);
+  background-color: rgb(129, 4, 179);
 }
 
 /* footer */
@@ -79,7 +80,123 @@ footer p {
   font-size: 12px;
 }
 
+#phone-view {
+  display: none;
+}
 
-/* @media () {
-  
-} */
+#typing-container {
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  display: inline-block;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.menu {
+  display: none;
+}
+
+.x-btn {
+  display: none;
+}
+
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#typing-container {
+  animation: blink 0.5s step-end infinite;
+}
+
+@media (max-width: 900px) {
+  .nav-items,
+  .log-sign-con {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 10px 20px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .subtext {
+    font-style: italic;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+
+  .nav-items,
+  .log-sign-con {
+    display: none;
+  }
+
+  .log-sign-con {
+    gap: 15px;
+  }
+
+  /* .log-sign a {
+   
+  } */
+
+  .body-btn {
+    /* background-color: rgb(129, 4, 179); */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .menu, .x-btn {
+   z-index: 1;
+    font-size: 25px;
+    align-self: center;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .menu{
+    display: block;
+  }
+
+ #phone-view{
+  position: absolute;
+  /* display: none; */
+  flex-direction: column;
+  gap: 20px;
+  top: 20px;
+  color: black;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  backdrop-filter: blur(10px); /* Blur effect */
+  width: 85%;
+  height: 100%;
+  padding: 20px;
+ }
+
+ .nav-items-phone, .log-sign-con-phone{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-weight: 600;
+ }
+
+ 
+.log-sign-phone a {
+  background-color: rgb(129, 4, 179);
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+}

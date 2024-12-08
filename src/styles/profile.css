@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+body {
+    /* background-color: #000; */
+    background: linear-gradient(rgb(35, 1, 39), rgb(3, 0, 2));
+    color: #fff;
+    font-family: Arial, sans-serif;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    /* margin: 0; */
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+   
+}
+
+ul{
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+li{
+    list-style-type: none;
+}
+.nav-items a{
+
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+.nav-items{
+    display: flex;
+    gap: 10px;
+}
+
+
+#body{
+    padding: 20px 50px;
+    display: flex;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid gray;
+}
+.calendar-day.logged-in {
+    background-color: rgb(129, 4, 179);
+    color: white;
+    font-weight: 600;
+}
+
+
+.bmi-intro{
+    font-size: 18px;
+    width: 50%;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+#log-out{
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: white;
+    font-weight: 200;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+
+#todays-date{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.workouts{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .workouts div{
+    width: 80%;
+  }

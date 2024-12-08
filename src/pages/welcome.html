@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WE CARE</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../styles/welcome.css" />
+    <script type="module" src="../scripts/welcome.js"></script>
   </head>
   <body>
     <!--hamburger menu-->
     <!-- <nav class="menu">
       <img src="../assets/hamburger-5_svgrepo.com.png" />
     </nav> -->
+    <div>
+      <a href="../index.html"
+      ><img src="../assets/logo.png" alt="" width="50" height="50"
+    /></a>
+    </div>
 
     <div class="container">
       <div class="information">
@@ -24,11 +30,21 @@
       <!-- <div class="general">General</div> -->
       <div class="form">
         <!--Form section-->
-        <form class="form-item">
-          <input type="number" id="" placeholder="Weight in kg" required />
-          <input type="number" id="" placeholder="Height in meters" required />
-          <input type="number" id="" placeholder="Age" required />
-          <input type="text" id="" placeholder="Gender" required />
+        <form id="form-item">
+          <input
+            type="number"
+            id="weight"
+            placeholder="Weight in kg"
+            required
+          />
+          <input
+            type="number"
+            id="height"
+            placeholder="Height in meters"
+            required
+          />
+          <input type="number" id="age" placeholder="Age" required />
+          <input type="text" id="gender" placeholder="Gender" required />
           <div class="form-button">
             <button type="submit" id="info-btn">Submit</button>
           </div>
