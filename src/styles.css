@@ -102,6 +102,10 @@ footer p {
   display: none;
 }
 
+a:hover{
+  color: rgb(167, 2, 233);
+}
+
 @keyframes blink {
   50% {
     border-color: transparent;
@@ -200,3 +204,5 @@ footer p {
     font-size: 14px;
   }
 }
+
+

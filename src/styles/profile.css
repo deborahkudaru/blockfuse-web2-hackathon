@@ -169,6 +169,10 @@ h3,
   display: none;
 }
 
+a:hover{
+    color: rgb(167, 2, 233);
+  }
+
 @media (max-width: 900px) {
   #body {
     flex-direction: column;

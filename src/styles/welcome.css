@@ -28,7 +28,7 @@ p {
   max-width: 360px;
   margin: 2rem auto;
   padding: 1.5rem;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   border-radius: 12px;
   border: 1px solid gray;
 }
@@ -69,4 +69,18 @@ button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
   color: #888;
+}
+
+#info-btn:hover {
+  background-color: rgb(167, 2, 233);
+}
+
+.logo {
+  padding: 20px 50px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    padding: 10px;
+  }
 }
