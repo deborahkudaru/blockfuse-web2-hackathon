@@ -102,7 +102,6 @@ footer p {
   display: none;
 }
 
-
 @keyframes blink {
   50% {
     border-color: transparent;
@@ -158,8 +157,9 @@ footer p {
     font-size: 16px;
   }
 
-  .menu, .x-btn {
-   z-index: 1;
+  .menu,
+  .x-btn {
+    z-index: 1;
     font-size: 25px;
     align-self: center;
     outline: 0;
@@ -167,36 +167,36 @@ footer p {
     background-color: transparent;
   }
 
-  .menu{
+  .menu {
     display: block;
   }
 
- #phone-view{
-  position: absolute;
-  /* display: none; */
-  flex-direction: column;
-  gap: 20px;
-  top: 20px;
-  color: black;
-  background: rgba(0, 0, 0, 0.3); /* Dark overlay */
-  backdrop-filter: blur(10px); /* Blur effect */
-  width: 85%;
-  height: 100%;
-  padding: 20px;
- }
+  #phone-view {
+    position: absolute;
+    /* display: none; */
+    flex-direction: column;
+    gap: 20px;
+    top: 20px;
+    color: black;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    width: 85%;
+    height: 100%;
+    padding: 20px;
+  }
 
- .nav-items-phone, .log-sign-con-phone{
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  font-weight: 600;
- }
+  .nav-items-phone,
+  .log-sign-con-phone {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-weight: 600;
+  }
 
- 
-.log-sign-phone a {
-  background-color: rgb(129, 4, 179);
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-}
+  .log-sign-phone a {
+    background-color: rgb(129, 4, 179);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
 }

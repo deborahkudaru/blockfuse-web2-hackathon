@@ -41,7 +41,7 @@ menuBtn.addEventListener("click", () => {
     document.getElementById("phone-view").style.display = "flex"
     menuBtn.style.display = "none";
     closeBtn.style.display = "block"
-    
+
 })
 
 

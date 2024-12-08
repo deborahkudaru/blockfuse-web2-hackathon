@@ -5,41 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../styles/signup.css" />
-    <!-- <link rel="stylesheet" href="../styles.css"> -->
-    <!-- <script type="module" src="../scripts/signup.js" defer></script> -->
-     <script type="module" src="../scripts/signup.js"></script>
+    <script type="module" src="../scripts/signup.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="signup-content">
         <div style="display: flex; align-items: center; gap: 1rem">
-          <!-- <div class="back-button">
-            <a href="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="back-icon"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                width="20"
-                height="20"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 19l-7-7 7-7"
-                /></svg
-            ></a>
-            <span>Back</span>
-          </div> -->
           <div class="signup-title">
             <h1>Sign Up</h1>
           </div>
         </div>
       </div>
-<!-- 
-      <div class="signup-info">Sign Up with the following option</div> -->
 
       <div class="signup-options">
         <button class="social-btn">
@@ -66,20 +42,27 @@
       <form class="signup-form">
         <div class="input-group">
           <label for="full-name">Full Name</label>
-          <input id="full-name" type="text" required autocomplete="additional-name" />
+          <input
+            id="full-name"
+            type="text"
+            required
+            autocomplete="additional-name"
+          />
         </div>
 
         <div class="input-group">
           <label for="email">Email</label>
-          <input id="email" type="email" required autocomplete="email"/>
+          <input id="email" type="email" required autocomplete="email" />
         </div>
 
         <div class="input-group">
           <label for="password">Password</label>
-          <input id="password" type="password" required/>
+          <input id="password" type="password" required />
         </div>
 
-        <button type="submit" class="signup-btn" id="submit-btn">Sign Up</button>
+        <button type="submit" class="signup-btn" id="submit-btn">
+          Sign Up
+        </button>
       </form>
 
       <div class="login-link">
@@ -89,7 +72,5 @@
         </span>
       </div>
     </div>
-
-    <!-- <script src="../scripts/signup.js"></script> -->
   </body>
 </html>

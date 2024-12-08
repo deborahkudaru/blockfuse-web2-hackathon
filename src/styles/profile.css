@@ -170,94 +170,96 @@ h3,
 }
 
 @media (max-width: 900px) {
-    #body {
-        flex-direction: column;
-      }
-    
-      #workout-section {
-        border-right: 0;
-      }
-    
-      h2 {
-        font-size: 1.7rem;
-      }
-    
-      .bmi-intro {
-        width: 100%;
-        font-size: 16px;
-      }
-    
-      .workouts img {
-        max-width: 70%;
-      }
-    
-      h4 {
-        font-size: 14px;
-      }
-    
-      .workouts {
-        /* display: grid; */
-        grid-template-columns: repeat(3, 1fr);
-      }
-    
-      .people {
-        margin-top: 10px;
-        margin-bottom: 20px;
-      }
-    
-      #date-sec {
-        padding: 0;
-      }
-    
-      .menu,
-      .x-btn {
-        z-index: 1;
-        font-size: 25px;
-        align-self: center;
-        outline: 0;
-        border: 0;
-        background-color: transparent;
-      }
-    
-      .menu, .x-btn {
-        display: block;
-        color: white;
-      }
-    
-      .nav-items {
-        display: none;
-      }
-    
-      #phone{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        top: 20px;
-        color: black;
-        background: rgba(0, 0, 0, 0.3); /* Dark overlay */
-        backdrop-filter: blur(10px); /* Blur effect */
-        width: 85%;
-        height: 100%;
-        padding: 20px;
-      }
-    
-      .nav-items-phone{
-        display: flex;
-        flex-direction: column;
-      }
-    
-      .nav-items-phone a{
-        color: #fff;
-      }
-    
-      #log-out{
-        margin: 0;
-      }
-    
-      nav, #body{
-        padding: 10px 20px;
-      } 
+  #body {
+    flex-direction: column;
+  }
+
+  #workout-section {
+    border-right: 0;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .bmi-intro {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .workouts img {
+    max-width: 70%;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .workouts {
+    /* display: grid; */
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .people {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  #date-sec {
+    padding: 0;
+  }
+
+  .menu,
+  .x-btn {
+    z-index: 1;
+    font-size: 25px;
+    align-self: center;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .menu,
+  .x-btn {
+    display: block;
+    color: white;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  #phone {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 20px;
+    color: black;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    width: 85%;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .nav-items-phone {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-items-phone a {
+    color: #fff;
+  }
+
+  #log-out {
+    margin: 0;
+  }
+
+  nav,
+  #body {
+    padding: 10px 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -310,7 +312,8 @@ h3,
     background-color: transparent;
   }
 
-  .menu, .x-btn {
+  .menu,
+  .x-btn {
     display: block;
     color: white;
   }
@@ -319,7 +322,7 @@ h3,
     display: none;
   }
 
-  #phone{
+  #phone {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -333,20 +336,21 @@ h3,
     padding: 20px;
   }
 
-  .nav-items-phone{
+  .nav-items-phone {
     display: flex;
     flex-direction: column;
   }
 
-  .nav-items-phone a{
+  .nav-items-phone a {
     color: #fff;
   }
 
-  #log-out{
+  #log-out {
     margin: 0;
   }
 
-  nav, #body{
+  nav,
+  #body {
     padding: 10px 20px;
   }
 }

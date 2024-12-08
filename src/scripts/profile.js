@@ -63,7 +63,7 @@ function fetchAndRenderCalendar(loginDates) {
 // Function to render logged times
 function renderLoggedTimes(loggedTimes) {
     const logContainer = document.querySelector("#log-container");
-    logContainer.innerHTML = "<p class='log-heading'>Logged Times. Target: 9000 seconds</p>"; 
+    logContainer.innerHTML = "<p class='log-heading'>Logged Times. Target: 9000 seconds</p>";
 
     loggedTimes.forEach(log => {
         const logElement = document.createElement("p");
@@ -207,7 +207,7 @@ menuBtn.addEventListener("click", () => {
     document.getElementById("phone").style.display = "flex"
     menuBtn.style.display = "none";
     closeBtn.style.display = "block"
-    
+
 })
 
 

@@ -61,7 +61,7 @@ submitBtn.addEventListener("click", (e) => {
                 .catch((err) => {
                     console.error("Error writing document", err);
 
-        
+
                     submitBtn.textContent = "Sign Up";
                     submitBtn.disabled = false;
                 });
