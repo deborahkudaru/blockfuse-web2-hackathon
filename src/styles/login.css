@@ -186,3 +186,7 @@ button:disabled {
     height: 120px;
   }
 }
+
+.login-button:hover{
+  background-color: rgb(167,2,233);
+}
