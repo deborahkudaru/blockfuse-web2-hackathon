@@ -64,3 +64,8 @@ p{
   cursor: pointer;
   margin-top: 1rem;
 }
+
+
+#info-btn:hover{
+  background-color: rgb(167, 2, 233);
+}

@@ -176,3 +176,7 @@ body {
         height: 120px;
     }
 }
+
+.signup-btn:hover{
+    background-color: rgb(167, 2, 233);
+}
