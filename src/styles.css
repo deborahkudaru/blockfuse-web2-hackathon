@@ -99,10 +99,11 @@ footer form{
 }
 
 
-footer textarea{
+footer textarea, footer input{
   background-color: transparent;
   border: 1px solid gray;
-  border-radius: 10px;
+  border-radius: 5px;
+  padding: 3px;
 }
 
 footer div{

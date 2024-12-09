@@ -51,3 +51,32 @@ closeBtn.addEventListener("click", () => {
     closeBtn.style.display = "none";
     menuBtn.style.display = "block"
 })
+
+document.getElementById('messageForm').addEventListener('submit', async function (e) {
+    e.preventDefault(); 
+
+        const email = document.getElementById("email")
+        const sendMessage = document.getElementById("message")
+    try {
+      const response = await fetch('http://localhost:3000/api/user/book', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, sendMessage }),
+      });
+        // sendMessage.innerText =""
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Login failed.');
+      }
+  
+      const data = await response.json();
+      alert(`message sent`);
+    } catch (error) {
+      console.error('Error:', error.message);
+      alert(`Error: ${error.message}`);
+    }
+  
+
+  });
