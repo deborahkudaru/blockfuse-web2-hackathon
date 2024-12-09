@@ -62,15 +62,11 @@ additionalInfoForm.addEventListener("submit", async (e) => {
         let BMI = weight/height**2
         if(BMI<18.5){
             window.location.href = "./underWeight.html";
-            // console.log("underweight")
         }else if(BMI >=18.5 && BMI <=24.9){
             window.location.href = "./normalWeight.html";
-            // console.log("Normal weigth")
         }else  if(BMI >=25 && BMI <=29.9){
             window.location.href = "./overWeight.html";
-            // console.log("you are overweigth")
         }else{
-            // console.log("you are obesed")
             window.location.href = "./profile.html";
         }
         

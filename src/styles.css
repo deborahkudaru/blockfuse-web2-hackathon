@@ -103,7 +103,7 @@ footer p {
 }
 
 a:hover{
-  color: rgb(167, 2, 233);
+  background-color: rgb(167, 2, 233);
 }
 
 @keyframes blink {
