@@ -60,17 +60,25 @@ function fetchAndRenderCalendar(loginDates) {
     }
 }
 
-// Function to render logged times
 function renderLoggedTimes(loggedTimes) {
     const logContainer = document.querySelector("#log-container");
     logContainer.innerHTML = "<p class='log-heading'>Logged Times. Target: 9000 seconds</p>";
 
+    let totalSeconds = 0;
+
     loggedTimes.forEach(log => {
         const logElement = document.createElement("p");
         logElement.textContent = `${log.time} seconds on ${log.date}`;
-        logContainer.appendChild(logElement);
+        logContainer.appendChild(logElement)
+        totalSeconds += log.time;
     });
+
+    const totalElement = document.createElement("p");
+    totalElement.classList.add("total-seconds");
+    totalElement.textContent = `Total: ${totalSeconds} seconds`;
+    logContainer.appendChild(totalElement);
 }
+
 
 // Fetch user data from database
 onAuthStateChanged(auth, (user) => {
@@ -217,3 +225,6 @@ closeBtn.addEventListener("click", () => {
     closeBtn.style.display = "none";
     menuBtn.style.display = "block"
 })
+
+
+

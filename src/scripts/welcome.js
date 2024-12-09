@@ -31,7 +31,7 @@ const db = getFirestore();
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("uid");
 
-// Reference the form and button
+
 const additionalInfoForm = document.querySelector("#form-item");
 const submitInfoBtn = document.querySelector("#info-btn");
 
@@ -51,23 +51,35 @@ additionalInfoForm.addEventListener("submit", async (e) => {
     const userDocRef = doc(db, "users", userId);
 
     try {
-        // Update the Firestore document with height and weight
         await updateDoc(userDocRef, {
-            height: parseInt(height),
-            weight: parseInt(weight),
-            age: parseInt(age),
+            height: Number(height),
+            weight: Number(weight),
+            age: Number(age),
             gender: gender,
         });
 
         console.log("Additional info added successfully");
-        // alert("Your additional information has been saved!");
-
-        // Redirect to another page, e.g., profile or dashboard
-        window.location.href = "./profile.html";
+        let BMI = weight/height**2
+        if(BMI<18.5){
+            window.location.href = "./underWeight.html";
+            // console.log("underweight")
+        }else if(BMI >=18.5 && BMI <=24.9){
+            window.location.href = "./normalWeight.html";
+            // console.log("Normal weigth")
+        }else  if(BMI >=25 && BMI <=29.9){
+            window.location.href = "./overWeight.html";
+            // console.log("you are overweigth")
+        }else{
+            // console.log("you are obesed")
+            window.location.href = "./profile.html";
+        }
+        
     } catch (err) {
         console.error("Error updating additional info:", err);
-        // alert("An error occurred while saving your information. Please try again.");
         submitInfoBtn.textContent = "Submit";
         submitInfoBtn.disabled = false;
     }
 });
+
+
+

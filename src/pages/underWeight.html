@@ -55,13 +55,16 @@
       </div>
     </nav>
     <!-- body -->
+    <div id="quote-container" style="font-size: 1.5rem; margin: 20px;"></div>
+
     <section id="body">
+
       <div id="workout-section">
         <div class="intro">
           <h2>👋Hi, <span id="full-name"></span></h2>
           <p class="bmi-intro">
             Your BMI is <b><span id="bmi"></span></b> and this shows you are
-            overweight and we have diets and workouts to help
+            underweight and we have diets and workouts to help add weight
             <span id="describe-what-to-do-with-weight"></span> weight
           </p>
         </div>
@@ -69,7 +72,7 @@
         <div id="#workouts">
           <h3>Workouts for you.</h3>
           <p class="people">
-            People with obesity will do more of cardiovascular as starters.
+            People with underweight will do more of strength training and muscle building exercises as starters.
           </p>
           <div>
             <div class="workouts">
@@ -78,7 +81,7 @@
                   src="data:image/jpeg;base64,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"
                   alt=""
                 />
-                <h4>Walking</h4>
+                <h4>Squats</h4>
 
                 <p>1,000-3,000 steps</p>
               </div>
@@ -140,6 +143,7 @@
           <button id="log-time-btn">Log Time</button>
         </div>
         <div id="log-container"></div>
+        <div> <span  id="total"></span></div>
       </div>
     </section>
 
