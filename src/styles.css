@@ -160,6 +160,9 @@ a:hover{
   .log-sign-con {
     gap: 15px;
   }
+  footer form{
+    width: 100%;
+   }
 }
 
 @media (max-width: 600px) {
@@ -242,6 +245,11 @@ a:hover{
     border-radius: 5px;
     font-size: 14px;
   }
+
+  footer form{
+   width: 100%;
+  }
+  
 }
 
 

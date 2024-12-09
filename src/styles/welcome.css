@@ -130,4 +130,8 @@ footer> p{
   .logo {
     padding: 10px;
   }
+
+  footer form{
+    width: 100%;
+   }
 }

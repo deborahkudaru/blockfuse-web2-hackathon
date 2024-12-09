@@ -330,6 +330,10 @@ footer> p{
   #body {
     padding: 10px 20px;
   }
+
+  footer form{
+    width: 100%;
+   }
 }
 
 @media (max-width: 600px) {
@@ -423,4 +427,8 @@ footer> p{
   #body {
     padding: 10px 20px;
   }
+
+  footer form{
+    width: 100%;
+   }
 }
