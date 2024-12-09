@@ -105,7 +105,7 @@ onAuthStateChanged(auth, (user) => {
         });
     } else {
         console.log("No user is logged in, redirecting to login...");
-        window.location.href = "../index.html";
+        window.location.href = "../../index.html";
     }
 });
 

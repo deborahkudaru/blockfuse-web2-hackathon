@@ -54,7 +54,7 @@ h1 {
 }
 
 .subtext {
-  font-style: italic;
+  /* font-style: italic; */
   width: 60%;
   margin: auto;
   margin-bottom: 50px;
