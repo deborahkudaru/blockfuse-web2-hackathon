@@ -55,8 +55,9 @@ submitBtn.addEventListener("click", (e) => {
             const docRef = doc(db, "users", user.uid);
             setDoc(docRef, userData)
                 .then(() => {
-
+                    alert("Sign Up Successful");
                     window.location.href = `./welcome.html?uid=${user.uid}`;
+        
                 })
                 .catch((err) => {
                     console.error("Error writing document", err);
