@@ -60,6 +60,25 @@ function fetchAndRenderCalendar(loginDates) {
     }
 }
 
+// function renderLoggedTimes(loggedTimes) {
+//     const logContainer = document.querySelector("#log-container");
+//     logContainer.innerHTML = "<p class='log-heading'>Logged Times. Target: 9000 seconds</p>";
+
+//     let totalSeconds = 0;
+
+//     loggedTimes.forEach(log => {
+//         const logElement = document.createElement("p");
+//         logElement.textContent = `${log.time} seconds on ${log.date}`;
+//         logContainer.appendChild(logElement)
+//         totalSeconds += log.time;
+//     });
+
+//     const totalElement = document.createElement("p");
+//     totalElement.classList.add("total-seconds");
+//     totalElement.textContent = `Total: ${totalSeconds} seconds`;
+//     logContainer.appendChild(totalElement);
+// }
+
 function renderLoggedTimes(loggedTimes) {
     const logContainer = document.querySelector("#log-container");
     logContainer.innerHTML = "<p class='log-heading'>Logged Times. Target: 9000 seconds</p>";
@@ -69,15 +88,27 @@ function renderLoggedTimes(loggedTimes) {
     loggedTimes.forEach(log => {
         const logElement = document.createElement("p");
         logElement.textContent = `${log.time} seconds on ${log.date}`;
-        logContainer.appendChild(logElement)
+        logContainer.appendChild(logElement);
         totalSeconds += log.time;
     });
+
+    const progressBarContainer = document.createElement("div");
+    progressBarContainer.classList.add("progress-bar-container");
+
+    const progressBar = document.createElement("div");
+    progressBar.classList.add("progress-bar");
+    const progressPercentage = Math.min((totalSeconds / 9000) * 100, 100);
+    progressBar.style.width = `${progressPercentage}%`;
+
+    progressBarContainer.appendChild(progressBar);
+    logContainer.appendChild(progressBarContainer);
 
     const totalElement = document.createElement("p");
     totalElement.classList.add("total-seconds");
     totalElement.textContent = `Total: ${totalSeconds} seconds`;
     logContainer.appendChild(totalElement);
 }
+
 
 
 // Fetch user data from database
