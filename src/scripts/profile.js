@@ -115,7 +115,7 @@ const logoutBtn = document.querySelector("#log-out");
 logoutBtn.addEventListener("click", () => {
     signOut(auth).then(() => {
         console.log("User successfully signed out");
-        window.location.href = "../index.html";
+        window.location.href = "../../index.html";
     }).catch((error) => {
         console.error("Error signing out:", error);
     });
