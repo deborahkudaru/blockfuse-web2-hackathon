@@ -168,6 +168,53 @@ button:disabled {
   padding: 20px 50px;
 }
 
+/* footer */
+footer {
+  background-color: black;
+  padding: 20px 50px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+footer button{
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: rgb(129, 4, 179);
+  outline: 0;
+  border: 0;
+}
+
+footer form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 20%;
+  margin: auto;
+}
+
+
+footer textarea{
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+footer div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+footer> p{
+  margin-top: 10px;
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 1rem;

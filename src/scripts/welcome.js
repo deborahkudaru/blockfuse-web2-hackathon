@@ -52,9 +52,9 @@ additionalInfoForm.addEventListener("submit", async (e) => {
 
     try {
         await updateDoc(userDocRef, {
-            height: Number(height),
-            weight: Number(weight),
-            age: Number(age),
+            height: parseFloat(height),
+            weight: parseFloat(weight),
+            age: parseInt(age),
             gender: gender,
         });
 
